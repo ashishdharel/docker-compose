@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: backend
+      target: development
+    # command: npm run start
+    ports:
+      - 2000:2000
+    networks:
+      - public
+  frontend:
+    build:
+      context: frontend
+      target: prod
+    ports:
+      - 80:80
+    networks:
+      - public
+    
+networks:
+  public:
